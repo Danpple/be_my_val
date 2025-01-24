@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/logo.jpeg" type="image/x-icon"/>
+    <title>Be My Val</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="band_1"></div>
+    <div class="band_2"></div>
+
+    <div id="envelope">
+        <div class="front_envelope">
+            <div class="cover"></div>
+            <div class="cover_left"></div>
+            <div class="cover_right"></div>
+            <div class="letter">
+                <p>
+                  <span>You might not know me that well, but I wanted to take a chance and let you know that you've caught my attention.</span>
+                  <span>There's something about the way you smile, the way you laugh, and the way you make others feel that draws me to you. You have this sparkle in your eyes that lights up the whole room.</span>
+                  <span>I know this might seem out of the blue, but I couldn't help but notice you from afar. I hope you'll take this as a compliment and not feel uncomfortable.</span>
+                  <span>Wishing you a wonderful Valentine's Day, filled with love, laughter, and all your favourite things.</span>
+                  <span>P.S. Keep shining your light!</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="back_envelope">
+          <p>To:<br>Onyinye</p>
+          <p>From:<br>An Admirer</p>
+        </div>
+    </div>
+
+    <audio src="assets/Dandelions.mp3" id="audio"></audio>
+
+    <script>
+        window.onload = () => {
+            const audio = document.getElementById("audio");
+
+            audio.addEventListener('canplaythrough', () => {
+                document.body.style.visibility = 'visible';
+            });
+
+            audio.load(); // Load the audio file
+        };
+
+        document.getElementById("envelope").onclick = () => {
+            let audio = document.getElementById("audio");
+            audio.loop = true;
+
+            if ( !audio.paused ) {
+                console.log("playing");
+            } else {
+                document.getElementById("audio").play();
+            }
+        }
+    </script>
+</body>
+</html>
